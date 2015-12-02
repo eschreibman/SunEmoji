@@ -1,4 +1,4 @@
-# Cool Beans
+# Cool Beans 
 
 Cool Beans is an iOS app written in Swift that displays the temperature using a [LightBlue Bean](https://punchthrough.com/bean/).
 
