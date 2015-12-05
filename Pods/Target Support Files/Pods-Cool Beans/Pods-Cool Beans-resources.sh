@@ -58,12 +58,12 @@ install_resource()
   esac
 }
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_resource "Bean-iOS-OSX-SDK/firmware/201411040000_BEAN_imgA.bin"
-  install_resource "Bean-iOS-OSX-SDK/firmware/201411040000_BEAN_imgB.bin"
+  install_resource "Bean-iOS-OSX-SDK/firmware/201504270003_BEAN_imgA.bin"
+  install_resource "Bean-iOS-OSX-SDK/firmware/201504270003_BEAN_imgB.bin"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_resource "Bean-iOS-OSX-SDK/firmware/201411040000_BEAN_imgA.bin"
-  install_resource "Bean-iOS-OSX-SDK/firmware/201411040000_BEAN_imgB.bin"
+  install_resource "Bean-iOS-OSX-SDK/firmware/201504270003_BEAN_imgA.bin"
+  install_resource "Bean-iOS-OSX-SDK/firmware/201504270003_BEAN_imgB.bin"
 fi
 
 mkdir -p "${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"
