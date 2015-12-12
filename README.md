@@ -2,8 +2,6 @@
 
 Cool Beans is an iOS app written in Swift that displays the temperature using a [LightBlue Bean](https://punchthrough.com/bean/).
 
-![Cool Beans Demo GIF](demo.gif)
-
 ## Usage
 
 1. Open `Cool Beans.xcworkspace`.
@@ -15,6 +13,7 @@ Cool Beans is an iOS app written in Swift that displays the temperature using a 
 ## Author
 
 Cool Beans was written by Kyle Weiner.
+Updated by Chris Gregg and Kate Wasynczuk
 
 ## License
 
