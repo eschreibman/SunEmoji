@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TemperatureView" customModule="Cool_Beans" customModuleProvider="target">
@@ -22,6 +24,9 @@
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Few-Xo-ADo">
                     <rect key="frame" x="20" y="159" width="560" height="37"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="37" id="Mnv-tI-PCe"/>
+                    </constraints>
                     <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="32"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
@@ -33,68 +38,54 @@
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0℉" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zB2-Z9-vva" customClass="NumberLabel" customModule="Cool_Beans" customModuleProvider="target">
                     <rect key="frame" x="157" y="19" width="286" height="129"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="286" id="E7g-ba-aTk"/>
+                        <constraint firstAttribute="width" constant="286" id="O5e-ec-AJC"/>
+                        <constraint firstAttribute="height" constant="129" id="vMg-AU-8Ag"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="112"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="x:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0U3-IO-lcZ" customClass="NumberLabel" customModule="Cool_Beans" customModuleProvider="target">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="x:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0U3-IO-lcZ" customClass="NumberLabel" customModule="Cool_Beans" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="204" width="600" height="129"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="129" id="fDo-pF-9sw"/>
-                        <constraint firstAttribute="width" constant="286" id="nk2-Zd-Yyc"/>
+                        <constraint firstAttribute="height" constant="129" id="cUc-dE-WZb"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="30"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="x max:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="57t-dj-Qwb" customClass="NumberLabel" customModule="Cool_Beans" customModuleProvider="target">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="x:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="57t-dj-Qwb" customClass="NumberLabel" customModule="Cool_Beans" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="171" width="600" height="129"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="129" id="Jdz-VK-WYw"/>
-                        <constraint firstAttribute="width" constant="286" id="SAS-WA-o6o"/>
-                    </constraints>
                     <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="30"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="y:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="koy-Ei-Vg3" customClass="NumberLabel" customModule="Cool_Beans" customModuleProvider="target">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="y:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="koy-Ei-Vg3" customClass="NumberLabel" customModule="Cool_Beans" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="300" width="600" height="129"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="286" id="VCY-Fm-PUw"/>
-                        <constraint firstAttribute="height" constant="129" id="chn-Zx-hF9"/>
+                        <constraint firstAttribute="height" constant="129" id="ZRW-Lv-BLt"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="30"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="y max:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fhB-Tm-c5p" customClass="NumberLabel" customModule="Cool_Beans" customModuleProvider="target">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="y:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fhB-Tm-c5p" customClass="NumberLabel" customModule="Cool_Beans" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="266" width="600" height="129"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="286" id="Nge-tX-nKN"/>
-                        <constraint firstAttribute="height" constant="129" id="eNG-mT-Kfa"/>
+                        <constraint firstAttribute="height" constant="129" id="CjC-V2-bUv"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="30"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="z:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hBI-aa-WeM" customClass="NumberLabel" customModule="Cool_Beans" customModuleProvider="target">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="z:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hBI-aa-WeM" customClass="NumberLabel" customModule="Cool_Beans" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="409" width="600" height="129"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="129" id="ZkL-q6-8m9"/>
-                        <constraint firstAttribute="width" constant="286" id="h3E-U6-Cjv"/>
-                    </constraints>
                     <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="30"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="z max:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cHx-AC-U2f" customClass="NumberLabel" customModule="Cool_Beans" customModuleProvider="target">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="z:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cHx-AC-U2f" customClass="NumberLabel" customModule="Cool_Beans" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="376" width="600" height="129"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="286" id="VJO-a9-9hb"/>
-                        <constraint firstAttribute="height" constant="129" id="cGP-bn-joO"/>
-                    </constraints>
                     <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="30"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
@@ -102,19 +93,36 @@
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="Wop-sx-hms" firstAttribute="centerX" secondItem="zB2-Z9-vva" secondAttribute="centerX" id="AN1-lb-Yrq"/>
-                <constraint firstItem="0U3-IO-lcZ" firstAttribute="top" secondItem="Few-Xo-ADo" secondAttribute="bottom" constant="8" symbolic="YES" id="H9W-Qk-H8Z"/>
-                <constraint firstItem="Wop-sx-hms" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="TSr-zJ-I1M"/>
-                <constraint firstItem="Few-Xo-ADo" firstAttribute="top" secondItem="zB2-Z9-vva" secondAttribute="bottom" constant="11" id="Xhn-NA-a1I"/>
-                <constraint firstItem="Wop-sx-hms" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="dJR-XK-BGf"/>
-                <constraint firstItem="Wop-sx-hms" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="144" id="lvP-jl-jcE"/>
-                <constraint firstItem="Few-Xo-ADo" firstAttribute="top" secondItem="Wop-sx-hms" secondAttribute="bottom" constant="13" id="mye-Uy-SoY"/>
-                <constraint firstItem="zB2-Z9-vva" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="19" id="nqd-cP-Yr9"/>
-                <constraint firstItem="Wop-sx-hms" firstAttribute="leading" secondItem="Few-Xo-ADo" secondAttribute="leading" id="oUX-Fa-6k7"/>
-                <constraint firstItem="zB2-Z9-vva" firstAttribute="centerX" secondItem="0U3-IO-lcZ" secondAttribute="centerX" id="qUU-Lq-lxW"/>
-                <constraint firstItem="Wop-sx-hms" firstAttribute="trailing" secondItem="Few-Xo-ADo" secondAttribute="trailing" id="r4u-lm-sFN"/>
-                <constraint firstItem="zB2-Z9-vva" firstAttribute="centerX" secondItem="koy-Ei-Vg3" secondAttribute="centerX" id="rk8-PO-cn0"/>
-                <constraint firstItem="zB2-Z9-vva" firstAttribute="centerX" secondItem="hBI-aa-WeM" secondAttribute="centerX" id="wmp-3s-Osk"/>
+                <constraint firstItem="cHx-AC-U2f" firstAttribute="leading" secondItem="hBI-aa-WeM" secondAttribute="leading" id="21p-4c-KzW"/>
+                <constraint firstItem="57t-dj-Qwb" firstAttribute="trailing" secondItem="0U3-IO-lcZ" secondAttribute="trailing" id="66v-gb-uQi"/>
+                <constraint firstItem="57t-dj-Qwb" firstAttribute="baseline" secondItem="fhB-Tm-c5p" secondAttribute="firstBaseline" id="8wh-14-oti"/>
+                <constraint firstAttribute="bottom" secondItem="cHx-AC-U2f" secondAttribute="bottom" constant="95" id="8zo-gr-oHQ"/>
+                <constraint firstItem="hBI-aa-WeM" firstAttribute="top" secondItem="fhB-Tm-c5p" secondAttribute="bottom" constant="14" id="AeX-bq-aqx"/>
+                <constraint firstItem="Few-Xo-ADo" firstAttribute="top" secondItem="zB2-Z9-vva" secondAttribute="bottom" constant="11" id="C96-dW-Fpx"/>
+                <constraint firstItem="0U3-IO-lcZ" firstAttribute="top" secondItem="Few-Xo-ADo" secondAttribute="bottom" constant="8" symbolic="YES" id="J3Z-h1-p93"/>
+                <constraint firstItem="koy-Ei-Vg3" firstAttribute="top" secondItem="57t-dj-Qwb" secondAttribute="bottom" id="JcH-kA-Qtn"/>
+                <constraint firstAttribute="trailing" secondItem="koy-Ei-Vg3" secondAttribute="trailing" id="LNd-p5-iEk"/>
+                <constraint firstItem="57t-dj-Qwb" firstAttribute="leading" secondItem="0U3-IO-lcZ" secondAttribute="leading" id="QjU-Ob-6Q3"/>
+                <constraint firstItem="fhB-Tm-c5p" firstAttribute="top" secondItem="Few-Xo-ADo" secondAttribute="bottom" constant="70" id="Qwt-MJ-LFV"/>
+                <constraint firstAttribute="bottom" secondItem="hBI-aa-WeM" secondAttribute="bottom" constant="62" id="Rvr-7B-q9B"/>
+                <constraint firstItem="fhB-Tm-c5p" firstAttribute="trailing" secondItem="0U3-IO-lcZ" secondAttribute="trailing" id="TAm-L1-fEv"/>
+                <constraint firstItem="57t-dj-Qwb" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="VJr-CD-JoE"/>
+                <constraint firstItem="57t-dj-Qwb" firstAttribute="centerX" secondItem="Few-Xo-ADo" secondAttribute="centerX" id="Zb9-Y9-Ujk"/>
+                <constraint firstItem="Wop-sx-hms" firstAttribute="leading" secondItem="Few-Xo-ADo" secondAttribute="leading" id="bNn-iA-DTr"/>
+                <constraint firstItem="Wop-sx-hms" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="bpu-dC-fXt"/>
+                <constraint firstItem="fhB-Tm-c5p" firstAttribute="trailing" secondItem="koy-Ei-Vg3" secondAttribute="trailing" id="dj8-u6-ZI1"/>
+                <constraint firstItem="koy-Ei-Vg3" firstAttribute="leading" secondItem="fhB-Tm-c5p" secondAttribute="leading" id="jVm-az-AOx"/>
+                <constraint firstItem="Few-Xo-ADo" firstAttribute="trailing" secondItem="Wop-sx-hms" secondAttribute="trailing" id="kqO-zi-Smw"/>
+                <constraint firstItem="Wop-sx-hms" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="144" id="l4I-nH-uYB"/>
+                <constraint firstItem="Few-Xo-ADo" firstAttribute="top" secondItem="Wop-sx-hms" secondAttribute="bottom" constant="13" id="mP7-4n-sO0"/>
+                <constraint firstItem="cHx-AC-U2f" firstAttribute="leading" secondItem="koy-Ei-Vg3" secondAttribute="leading" id="oTm-zP-Znr"/>
+                <constraint firstItem="cHx-AC-U2f" firstAttribute="trailing" secondItem="hBI-aa-WeM" secondAttribute="trailing" id="rsj-lU-bgt"/>
+                <constraint firstItem="0U3-IO-lcZ" firstAttribute="leading" secondItem="fhB-Tm-c5p" secondAttribute="leading" id="sWb-qg-qTK"/>
+                <constraint firstItem="zB2-Z9-vva" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="19" id="thZ-ag-z4C"/>
+                <constraint firstItem="cHx-AC-U2f" firstAttribute="top" secondItem="0U3-IO-lcZ" secondAttribute="bottom" constant="43" id="tsB-3j-7Kg"/>
+                <constraint firstItem="Wop-sx-hms" firstAttribute="centerX" secondItem="zB2-Z9-vva" secondAttribute="centerX" id="vGK-8h-52V"/>
+                <constraint firstItem="koy-Ei-Vg3" firstAttribute="trailing" secondItem="cHx-AC-U2f" secondAttribute="trailing" id="vH9-I9-ri3"/>
+                <constraint firstItem="57t-dj-Qwb" firstAttribute="top" secondItem="zB2-Z9-vva" secondAttribute="bottom" constant="23" id="yvs-ux-Jb6"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
         </view>

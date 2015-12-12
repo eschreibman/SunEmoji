@@ -66,12 +66,13 @@ class ConnectedViewController: UIViewController, PTDBeanDelegate {
         refreshControl.addTarget(self, action: "didPullToRefresh:", forControlEvents: .ValueChanged)
         refreshControl.tintColor = .whiteColor()
         scrollView.addSubview(refreshControl)
-        temperatureView.maxX = -20
-        temperatureView.maxY = -20
-        temperatureView.maxZ = -20
-        temperatureView.xAcc.text = String(format:"%f", temperatureView.maxX)
-        temperatureView.yAcc.text = String(format:"%f", temperatureView.maxY)
-        temperatureView.zAcc.text = String(format:"%f", temperatureView.maxZ)
+            temperatureView.xAcc.text = String(format:"%f", 0.0)
+        temperatureView.yAcc.text = String(format:"%f", 0.0)
+        temperatureView.zAcc.text = String(format:"%f", 0.0)
+        // set up timer
+        if ((temperatureView.timer == nil)){
+            temperatureView.timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target:self, selector: Selector("updateAcc"), userInfo: nil, repeats: true)
+        }
 
     }
 
@@ -84,16 +85,9 @@ class ConnectedViewController: UIViewController, PTDBeanDelegate {
 
     func didPullToRefresh(sender: AnyObject) {
         refreshControl.endRefreshing()
-        temperatureView.maxX = -20
-        temperatureView.maxY = -20
-        temperatureView.maxZ = -20
-        temperatureView.xAcc.text = String(format:"%f", temperatureView.maxX)
-        temperatureView.yAcc.text = String(format:"%f", temperatureView.maxY)
-        temperatureView.zAcc.text = String(format:"%f", temperatureView.maxZ)
-
-        if ((temperatureView.timer == nil)){
-            temperatureView.timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target:self, selector: Selector("updateAcc"), userInfo: nil, repeats: true)
-        }
+        temperatureView.xAcc.text = String(format:"%f", 0.0)
+        temperatureView.yAcc.text = String(format:"%f", 0.0)
+        temperatureView.zAcc.text = String(format:"%f", 0.0)
     }
     
     func updateAcc(){
@@ -113,18 +107,9 @@ class ConnectedViewController: UIViewController, PTDBeanDelegate {
     }
 
     func bean(bean: PTDBean!, didUpdateAccelerationAxes acceleration: PTDAcceleration) {
-        if (temperatureView.maxX < acceleration.x) {
-            temperatureView.maxX = acceleration.x
-            temperatureView.xAcc.text = String(format:"%f", temperatureView.maxX)
-        }
-        if (temperatureView.maxY < acceleration.y) {
-            temperatureView.maxY = acceleration.y
-            temperatureView.yAcc.text = String(format:"%f", temperatureView.maxY)
-        }
-        if (temperatureView.maxZ < acceleration.z) {
-            temperatureView.maxZ = acceleration.z
-            temperatureView.zAcc.text = String(format:"%f", temperatureView.maxZ)
-        }
+        temperatureView.xAcc.text = String(format:"%f", acceleration.x)
+        temperatureView.yAcc.text = String(format:"%f", acceleration.y)
+        temperatureView.zAcc.text = String(format:"%f", acceleration.z)
     }
 
     // MARK: Helper

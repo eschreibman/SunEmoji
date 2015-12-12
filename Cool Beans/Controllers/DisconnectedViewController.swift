@@ -47,19 +47,20 @@ class DisconnectedViewController: UIViewController, PTDBeanManagerDelegate {
     func beanManagerDidUpdateState(beanManager: PTDBeanManager!) {
         switch beanManager.state {
             case .Unsupported:
-                UIAlertView(
-                    title: "Error",
-                    message: "This device is unsupported.",
-                    delegate: self,
-                    cancelButtonTitle: "OK"
-                    ).show()
+                let alertController = UIAlertController(title: "Error", message: "This device is unsupported", preferredStyle: .Alert)
+                
+                let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+                alertController.addAction(defaultAction)
+                
+                presentViewController(alertController, animated: true, completion: nil)
             case .PoweredOff:
-                UIAlertView(
-                    title: "Error",
-                    message: "Please turn on Bluetooth.",
-                    delegate: self,
-                    cancelButtonTitle: "OK"
-                    ).show()
+                let alertController = UIAlertController(title: "Error", message: "Please turn on Bluetooth", preferredStyle: .Alert)
+                
+                let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+                alertController.addAction(defaultAction)
+                
+                presentViewController(alertController, animated: true, completion: nil)
+                
             case .PoweredOn:
                 beanManager.startScanningForBeans_error(nil);
             default:

@@ -16,7 +16,6 @@ class TemperatureView: UIView {
     @IBOutlet weak var xAcc : UILabel!
     @IBOutlet weak var yAcc : UILabel!
     @IBOutlet weak var zAcc : UILabel!
-    var maxX,maxY,maxZ : Double!
     var timer : NSTimer!
 
     // MARK: Lifecycle
