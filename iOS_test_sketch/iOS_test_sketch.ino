@@ -1,5 +1,8 @@
 #define UVpin A0
 //float UVindex = 0; 
+
+int UVreading = 0;
+int UVindex = 0;
 void setup() {
         Serial.begin(57600);
         Serial.setTimeout(25);
@@ -16,17 +19,18 @@ void loop() {
         Serial.println(UVindex);
         */
 
-        int UVreading = 10;
-        int UVindex = 20;
+        UVreading++;
+        UVindex++;
 
         String reading = "reading:"+(String)UVreading;
         String index = ":index:"+(String)UVindex;
         
-        Serial.println(reading + index);
-        //Serial.println(index);
-        
+        Serial.println(reading + index);     
 
-        
+        if(UVreading % 10 == 0){
+          UVreading = 0;
+          UVindex = 0;
+        }
         
         delay(2000);
 }
