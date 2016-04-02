@@ -37,7 +37,7 @@
 		02C27BEF1A14927F00685D31 /* CustomColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomColors.swift; sourceTree = "<group>"; };
 		02C27BF61A15B97100685D31 /* SonicView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SonicView.xib; sourceTree = "<group>"; };
 		02C27BF81A15C4DE00685D31 /* SonicView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SonicView.swift; sourceTree = "<group>"; };
-		02C48A3B1A141B4D0015956F /* SonicIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SonicIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		02C48A3B1A141B4D0015956F /* SunEmoji.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SunEmoji.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02C48A3F1A141B4D0015956F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		02C48A401A141B4D0015956F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		02C48A451A141B4D0015956F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -103,7 +103,7 @@
 		02C48A3C1A141B4D0015956F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				02C48A3B1A141B4D0015956F /* SonicIOS.app */,
+				02C48A3B1A141B4D0015956F /* SunEmoji.app */,
 				02C48A501A141B4D0015956F /* SonicIOS.xctest */,
 			);
 			name = Products;
@@ -197,7 +197,7 @@
 			);
 			name = SonicIOS;
 			productName = "Cool Beans";
-			productReference = 02C48A3B1A141B4D0015956F /* SonicIOS.app */;
+			productReference = 02C48A3B1A141B4D0015956F /* SunEmoji.app */;
 			productType = "com.apple.product-type.application";
 		};
 		02C48A4F1A141B4D0015956F /* SonicIOSTests */ = {
@@ -463,14 +463,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 479240FFDBF77C40AE02328C /* Pods-Cool Beans.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = SonicIOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cocoadrillosoftware.sonicbean;
-				PRODUCT_NAME = SonicIOS;
+				PRODUCT_NAME = SunEmoji;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/SonicIOS/Bridging-Header.h";
 			};
@@ -480,14 +480,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 754D10CDF1751A9F9197CCD4 /* Pods-Cool Beans.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = SonicIOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cocoadrillosoftware.sonicbean;
-				PRODUCT_NAME = SonicIOS;
+				PRODUCT_NAME = SunEmoji;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/SonicIOS/Bridging-Header.h";
 			};
