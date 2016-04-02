@@ -1,0 +1,40 @@
+*Pick And Place List
+*Company=
+*Author=
+*eMail=
+*
+*Project=UltraSonic
+*Date=19:12:12
+*CreatedBy=Fritzing 0.9.2b.11.19.8d2d5970658f0bed09c661c9ea9a515b5f40f44c
+*
+*
+*Coordinates in mm, always center of component
+*Origin 0/0=Lower left corner of PCB
+*Rotation in degree (0-360, math. pos.)
+*
+*No;Value;Package;X;Y;Rotation;Side;Name
+1;;1206;22.9861;-9.35001;-90;Top;C2
+2;;1206 [SMD];8.11503;-19.6628;0;Top;LED2
+3;;1206 [SMD];8.18169;-15.8528;0;Top;LED1
+4;;power_jack_smd;14.4611;-7.18667;-90;Top;J1
+5;;;11.8872;-17.78;0;Bottom;Via10
+6;;;2.7432;-21.4376;0;Bottom;Via8
+7;;;20.0181;-24.2389;0;Bottom;Ultrasonic
+8;adjustable;sot223;3.92503;-9.61786;180;Bottom;IC1
+9;1k;1206 [SMD];21.2834;-19.71;180;Bottom;R1
+10;;;17.9832;-5.588;0;Bottom;Via4
+11;;;20.9997;-19.4892;0;Bottom;TXT1
+12;;;11.8872;-15.9512;0;Bottom;Via5
+13;;;24.0792;-13.5128;0;Bottom;Via9
+14;;;2.1336;-10.4648;0;Bottom;Via7
+15;;THT;3.21948;-2.15333;-90;Bottom;Bean
+16;1k;1206 [SMD];14.5347;-13.2747;180;Bottom;R2
+17;1k;1206 [SMD];21.3795;-15.9;180;Bottom;R3
+18;;;3.9624;-18.3896;0;Bottom;Via3
+19;1.5k;1206 [SMD];14.7644;-19.6493;0;Bottom;R5
+20;;SOT-23 [SMD];2.17948;-15.8756;90;Bottom;Q1
+21;1M;1206 [SMD];8.08949;-23.6611;0;Bottom;R4
+22;;;4.572;-20.828;0;Bottom;Via6
+23;;;17.9832;-16.5608;0;Bottom;Via1
+24;;;7.0104;-7.4168;0;Bottom;Via2
+25;;1206;23.0567;-3.21168;-90;Top;C1
