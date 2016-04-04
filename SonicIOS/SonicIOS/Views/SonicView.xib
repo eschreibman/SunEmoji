@@ -5,10 +5,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SonicView" customModule="SonicIOS" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SonicView" customModule="SunEmoji" customModuleProvider="target">
             <connections>
                 <outlet property="containerView" destination="iN0-l3-epB" id="hnY-kG-3FS"/>
-                <outlet property="nameLabel" destination="Few-Xo-ADo" id="bhL-Aa-wpl"/>
+                <outlet property="nameLabel" destination="Few-Xo-ADo" id="5ca-HW-Agm"/>
                 <outlet property="uvIndex" destination="ceV-Y8-GIi" id="HR7-5Q-qwy"/>
                 <outlet property="uvReading" destination="TUI-Yq-cL6" id="nQA-h4-zTB"/>
             </connections>
