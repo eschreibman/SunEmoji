@@ -12,6 +12,9 @@ import Charts
 class ConnectedViewController: UIViewController, PTDBeanDelegate {
 
     var connectedBean: PTDBean?
+    
+    var time = ["1", "2", "3", "4"]
+    var uvIndices : [Double] = [0.0, 0.0, 0.0, 0.0]
 
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var sonicView: SonicView!
@@ -28,12 +31,6 @@ class ConnectedViewController: UIViewController, PTDBeanDelegate {
         
         sonicView.myController = self;
         
-        let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun"]
-        let unitsSold = [20.0, 4.0, 6.0, 3.0, 12.0, 16.0]
-        
-        setChart(months, values: unitsSold)
-        
-        
     }
 
     
@@ -49,6 +46,9 @@ class ConnectedViewController: UIViewController, PTDBeanDelegate {
         
         let lineChartDataSet = LineChartDataSet(yVals: dataEntries, label: "Units Sold")
         let lineChartData = LineChartData(xVals: dataPoints, dataSet: lineChartDataSet)
+        
+       
+        
         sonicView.lineChartView.data = lineChartData
         
     }
@@ -58,6 +58,7 @@ class ConnectedViewController: UIViewController, PTDBeanDelegate {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         connectedBean?.readTemperature()
+        setChart(time, values: uvIndices)
     }
 
     // MARK: Actions
@@ -82,11 +83,21 @@ class ConnectedViewController: UIViewController, PTDBeanDelegate {
         if(theString.containsString("index:")){
             let stringParts = theString.componentsSeparatedByString(":")
             sonicView.uvIndex.text = stringParts[3];
+            
+            uvIndices.removeFirst();
+            uvIndices.append(Double(stringParts[3])!);
+            
+            setChart(time, values: uvIndices)
+            
         }
+        
+        
+        
         
         print(theString)
 
     }
+
 
     // MARK: Helper
 
