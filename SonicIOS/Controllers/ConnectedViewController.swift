@@ -73,12 +73,12 @@ class ConnectedViewController: UIViewController, PTDBeanDelegate {
         let theString:String = NSString(data: data, encoding: NSASCIIStringEncoding)! as String
         
         //string coming in looks like 'reading:10:index:20'
-        
+        /*
         if(theString.containsString("reading:")){
             let stringParts = theString.componentsSeparatedByString(":")
             sonicView.uvReading.text = stringParts[1];
         }
-        
+        */
         if(theString.containsString("index:")){
             let stringParts = theString.componentsSeparatedByString(":")
             sonicView.uvIndex.text = stringParts[3];

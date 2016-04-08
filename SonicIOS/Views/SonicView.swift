@@ -13,7 +13,6 @@ class SonicView: UIView {
 
     @IBOutlet var containerView: UIView!
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var uvReading: UILabel!
     @IBOutlet weak var uvIndex: UILabel!
     @IBOutlet weak var lineChartView: LineChartView!
     
