@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Charts
 
 class ConnectedViewController: UIViewController, PTDBeanDelegate {
 
@@ -14,6 +15,8 @@ class ConnectedViewController: UIViewController, PTDBeanDelegate {
 
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var sonicView: SonicView!
+    
+   
 
     // MARK: Lifecycle
 
@@ -25,8 +28,33 @@ class ConnectedViewController: UIViewController, PTDBeanDelegate {
         
         sonicView.myController = self;
         
+        let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun"]
+        let unitsSold = [20.0, 4.0, 6.0, 3.0, 12.0, 16.0]
+        
+        setChart(months, values: unitsSold)
+        
+        
     }
 
+    
+    func setChart(dataPoints: [String], values: [Double]) {
+        
+        var dataEntries: [ChartDataEntry] = []
+        
+        for i in 0..<dataPoints.count {
+            let dataEntry = ChartDataEntry(value: values[i], xIndex: i)
+            dataEntries.append(dataEntry)
+        }
+        
+        
+        let lineChartDataSet = LineChartDataSet(yVals: dataEntries, label: "Units Sold")
+        let lineChartData = LineChartData(xVals: dataPoints, dataSet: lineChartDataSet)
+        sonicView.lineChartView.data = lineChartData
+        
+    }
+
+    
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         connectedBean?.readTemperature()
