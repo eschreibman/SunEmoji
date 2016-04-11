@@ -15,14 +15,9 @@ class SonicView: UIView {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var uvIndex: UILabel!
     @IBOutlet weak var lineChartView: LineChartView!
-    @IBOutlet weak var resetButton: UIButton!
     
     var myController : ConnectedViewController!
     
-    @IBAction func resetButton(sender: UIButton) {
-        myController.connectedBean!.sendSerialString("reset")
-        resetButton.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 1.0, blue: 0.0, alpha: 1.0)
-    }
     
     // MARK: Lifecycle
 

@@ -13,8 +13,8 @@ class ConnectedViewController: UIViewController, PTDBeanDelegate {
 
     var connectedBean: PTDBean?
     
-    var time : [String] = []
-    var uvIndices : [Double] = []
+    var time = ["1", "2", "3", "4"]
+    var uvIndices : [Double] = [0.0, 0.0, 0.0, 0.0]
 
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var sonicView: SonicView!
@@ -31,10 +31,6 @@ class ConnectedViewController: UIViewController, PTDBeanDelegate {
         
         sonicView.myController = self;
         
-        
-        //time.append(getCurrentTime())
-        //uvIndices.append(0.0)
-        
     }
 
     
@@ -48,7 +44,7 @@ class ConnectedViewController: UIViewController, PTDBeanDelegate {
         }
         
         
-        let lineChartDataSet = LineChartDataSet(yVals: dataEntries, label: "UV Index")
+        let lineChartDataSet = LineChartDataSet(yVals: dataEntries, label: "Units Sold")
         let lineChartData = LineChartData(xVals: dataPoints, dataSet: lineChartDataSet)
         
        
@@ -86,14 +82,10 @@ class ConnectedViewController: UIViewController, PTDBeanDelegate {
         */
         if(theString.containsString("index:")){
             let stringParts = theString.componentsSeparatedByString(":")
-            sonicView.uvIndex.text = stringParts[3]
+            sonicView.uvIndex.text = stringParts[3];
             
-            if(uvIndices.count >= 10){
-                time.removeFirst()
-                uvIndices.removeFirst()
-            }
-            time.append(getCurrentTime())
-            uvIndices.append(Double(stringParts[3])!)
+            uvIndices.removeFirst();
+            uvIndices.append(Double(stringParts[3])!);
             
             setChart(time, values: uvIndices)
             
@@ -104,19 +96,6 @@ class ConnectedViewController: UIViewController, PTDBeanDelegate {
         
         print(theString)
 
-    }
-    
-    func getCurrentTime() -> String{
-        let date = NSDate()
-        let calendar = NSCalendar.currentCalendar()
-        let hour = calendar.component(.Hour, fromDate: date)
-        let minutes = calendar.component(.Minute, fromDate: date)
-        
-        let string = String(hour) + ":" + String(minutes)
-        
-        return string;
-        
-        
     }
 
 

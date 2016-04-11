@@ -10,7 +10,6 @@
                 <outlet property="containerView" destination="iN0-l3-epB" id="hnY-kG-3FS"/>
                 <outlet property="lineChartView" destination="xrZ-ry-u8c" id="dq1-3F-oTo"/>
                 <outlet property="nameLabel" destination="Few-Xo-ADo" id="5ca-HW-Agm"/>
-                <outlet property="resetButton" destination="HnL-gi-EAC" id="yrz-Va-36L"/>
                 <outlet property="uvIndex" destination="ceV-Y8-GIi" id="HR7-5Q-qwy"/>
             </connections>
         </placeholder>
@@ -57,15 +56,6 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HnL-gi-EAC">
-                    <rect key="frame" x="281" y="547" width="39" height="30"/>
-                    <state key="normal" title="Reset">
-                        <color key="titleColor" red="1" green="0.34056184957920688" blue="0.21202812577152175" alpha="1" colorSpace="calibratedRGB"/>
-                    </state>
-                    <connections>
-                        <action selector="resetButton:" destination="-1" eventType="touchUpInside" id="iGX-RV-TLO"/>
-                    </connections>
-                </button>
             </subviews>
             <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
