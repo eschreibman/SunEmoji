@@ -31,10 +31,6 @@ class ConnectedViewController: UIViewController, PTDBeanDelegate {
         
         sonicView.myController = self;
         
-        
-        //time.append(getCurrentTime())
-        //uvIndices.append(0.0)
-        
     }
 
     
@@ -77,28 +73,35 @@ class ConnectedViewController: UIViewController, PTDBeanDelegate {
     func bean(bean: PTDBean!, serialDataReceived data:NSData) {
         let theString:String = NSString(data: data, encoding: NSASCIIStringEncoding)! as String
         
-        //string coming in looks like 'reading:10:index:20'
-        /*
-        if(theString.containsString("reading:")){
-            let stringParts = theString.componentsSeparatedByString(":")
-            sonicView.uvReading.text = stringParts[1];
-        }
-        */
+        //string coming in looks like 'index:20'
+
         if(theString.containsString("index:")){
             let stringParts = theString.componentsSeparatedByString(":")
-            sonicView.uvIndex.text = stringParts[3]
+            sonicView.uvIndex.text = stringParts[1]
             
             if(uvIndices.count >= 10){
                 time.removeFirst()
                 uvIndices.removeFirst()
             }
             time.append(getCurrentTime())
-            uvIndices.append(Double(stringParts[3])!)
+            uvIndices.append(Double(stringParts[1])!)
             
             setChart(time, values: uvIndices)
             
         }
         
+        
+        if(theString.containsString("timer_at_zero")){
+            
+            let notification = UILocalNotification()
+            notification.alertBody = "Put on sunscreen!" // text that will be displayed in the notification
+            notification.alertAction = "open" // text that is displayed after "slide to..." on the lock screen - defaults to "slide to view" → I don’t think we’re actually using this
+            notification.fireDate = NSDate() // date when notification should be fired (NSDate() defaults to current date and time)
+            notification.soundName = UILocalNotificationDefaultSoundName // play default sound (don’t think this’ll work unless we add “.Sound” to the AppDelegate)
+            notification.category = "TODO_CATEGORY" // i don’t think we’re using this
+            UIApplication.sharedApplication().scheduleLocalNotification(notification) // schedules the notification
+            
+        }
         
         
         

@@ -239,7 +239,7 @@
 				TargetAttributes = {
 					02C48A3A1A141B4D0015956F = {
 						CreatedOnToolsVersion = 6.1;
-						DevelopmentTeam = 67B5B5KVGC;
+						DevelopmentTeam = WC8GK6LE4R;
 					};
 					02C48A4F1A141B4D0015956F = {
 						CreatedOnToolsVersion = 6.1;
@@ -472,8 +472,8 @@
 			baseConfigurationReference = D3F50B5E771EEE5317B98394 /* Pods-SonicIOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Melissa Blotner (768GZ2X6PZ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Melissa Blotner (768GZ2X6PZ)";
 				INFOPLIST_FILE = SonicIOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -489,8 +489,8 @@
 			baseConfigurationReference = 636A854F63B87CE37D41410E /* Pods-SonicIOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Melissa Blotner (768GZ2X6PZ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Melissa Blotner (768GZ2X6PZ)";
 				INFOPLIST_FILE = SonicIOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
