@@ -18,6 +18,7 @@
 		02C48A571A141B4D0015956F /* Cool_BeansTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C48A561A141B4D0015956F /* Cool_BeansTests.swift */; };
 		02F74AE01A16F52B00E4DBB7 /* DisconnectedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F74ADF1A16F52B00E4DBB7 /* DisconnectedViewController.swift */; };
 		02F74AE21A16F54600E4DBB7 /* ConnectedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F74AE11A16F54600E4DBB7 /* ConnectedViewController.swift */; };
+		BA07CFAAEA40CEEA54649198 /* Pods_SonicIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA380C2C6BE4343A1A625583 /* Pods_SonicIOS.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		F6F766170DC03089EE95A3D6 /* libPods-Cool Beans.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 17A1BBC4224A0E92FD7BE754 /* libPods-Cool Beans.a */; };
 /* End PBXBuildFile section */
 
@@ -50,7 +51,10 @@
 		02F74AE11A16F54600E4DBB7 /* ConnectedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectedViewController.swift; sourceTree = "<group>"; };
 		17A1BBC4224A0E92FD7BE754 /* libPods-Cool Beans.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Cool Beans.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		479240FFDBF77C40AE02328C /* Pods-Cool Beans.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cool Beans.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cool Beans/Pods-Cool Beans.debug.xcconfig"; sourceTree = "<group>"; };
+		636A854F63B87CE37D41410E /* Pods-SonicIOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SonicIOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-SonicIOS/Pods-SonicIOS.release.xcconfig"; sourceTree = "<group>"; };
 		754D10CDF1751A9F9197CCD4 /* Pods-Cool Beans.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cool Beans.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cool Beans/Pods-Cool Beans.release.xcconfig"; sourceTree = "<group>"; };
+		CA380C2C6BE4343A1A625583 /* Pods_SonicIOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SonicIOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3F50B5E771EEE5317B98394 /* Pods-SonicIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SonicIOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SonicIOS/Pods-SonicIOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +63,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6F766170DC03089EE95A3D6 /* libPods-Cool Beans.a in Frameworks */,
+				BA07CFAAEA40CEEA54649198 /* Pods_SonicIOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				17A1BBC4224A0E92FD7BE754 /* libPods-Cool Beans.a */,
+				CA380C2C6BE4343A1A625583 /* Pods_SonicIOS.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -173,6 +179,8 @@
 			children = (
 				479240FFDBF77C40AE02328C /* Pods-Cool Beans.debug.xcconfig */,
 				754D10CDF1751A9F9197CCD4 /* Pods-Cool Beans.release.xcconfig */,
+				D3F50B5E771EEE5317B98394 /* Pods-SonicIOS.debug.xcconfig */,
+				636A854F63B87CE37D41410E /* Pods-SonicIOS.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -231,7 +239,7 @@
 				TargetAttributes = {
 					02C48A3A1A141B4D0015956F = {
 						CreatedOnToolsVersion = 6.1;
-						DevelopmentTeam = 67B5B5KVGC;
+						DevelopmentTeam = WC8GK6LE4R;
 					};
 					02C48A4F1A141B4D0015956F = {
 						CreatedOnToolsVersion = 6.1;
@@ -307,7 +315,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Cool Beans/Pods-Cool Beans-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SonicIOS/Pods-SonicIOS-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		8E674EF3E2914ABA0B26B93F /* Embed Pods Frameworks */ = {
@@ -322,7 +330,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Cool Beans/Pods-Cool Beans-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SonicIOS/Pods-SonicIOS-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -461,7 +469,7 @@
 		};
 		02C48A5B1A141B4D0015956F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 479240FFDBF77C40AE02328C /* Pods-Cool Beans.debug.xcconfig */;
+			baseConfigurationReference = D3F50B5E771EEE5317B98394 /* Pods-SonicIOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -478,7 +486,7 @@
 		};
 		02C48A5C1A141B4D0015956F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 754D10CDF1751A9F9197CCD4 /* Pods-Cool Beans.release.xcconfig */;
+			baseConfigurationReference = 636A854F63B87CE37D41410E /* Pods-SonicIOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				CODE_SIGN_IDENTITY = "iPhone Developer";

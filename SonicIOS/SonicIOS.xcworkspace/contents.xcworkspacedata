@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:../../../../../../Downloads/Charts-master/Charts/Charts.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:SonicIOS.xcodeproj">
    </FileRef>
    <FileRef

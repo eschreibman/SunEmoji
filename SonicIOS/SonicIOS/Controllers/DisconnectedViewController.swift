@@ -75,7 +75,9 @@ class DisconnectedViewController: UIViewController, PTDBeanManagerDelegate, UITa
         if connectedBean == nil {
             if bean.state == .Discovered {
                 //manager.connectToBean(bean, error: nil)
-                beanArray.append(bean)
+                if(!beanArray.contains(bean)){
+                    beanArray.append(bean)
+                }
                 beanTableView.reloadData()
             }
         }

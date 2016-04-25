@@ -2,7 +2,7 @@
 //float UVindex = 0; 
 
 int UVreading = 0;
-int UVindex = 0;
+float UVindex = 0;
 void setup() {
         Serial.begin(57600);
         Serial.setTimeout(25);
@@ -23,7 +23,13 @@ void loop() {
         UVindex++;
 
         String reading = "reading:"+(String)UVreading;
-        String index = ":index:"+(String)UVindex;
+        
+
+        char buff[5];
+        
+        String thing = dtostrf(UVindex, 5, 2, buff);
+
+        String index = ":index:"+(String)thing;
         
         Serial.println(reading + index);     
 
