@@ -27,7 +27,7 @@
                         <constraint firstAttribute="width" constant="348" id="K4n-Jf-gqr"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="32"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="textColor" red="0.0" green="0.76470588240000004" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <view alpha="0.29999999999999999" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wop-sx-hms">
@@ -39,7 +39,7 @@
                         <constraint firstAttribute="height" constant="21" id="4zY-on-ms3"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="textColor" red="0.0" green="0.76470588240000004" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xrZ-ry-u8c" customClass="LineChartView" customModule="Charts">
@@ -52,18 +52,24 @@
                         <constraint firstAttribute="width" constant="90" id="8IN-7k-ju6"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="textColor" red="0.0" green="0.76470588240000004" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="po5-ub-8sr">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                    <color key="barTintColor" red="0.0" green="0.76470588235294112" blue="0.89803921568627454" alpha="1" colorSpace="calibratedRGB"/>
+                    <textAttributes key="titleTextAttributes">
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </textAttributes>
                     <items>
                         <navigationItem title="SunEmoji" id="pyO-H3-114">
                             <barButtonItem key="leftBarButtonItem" style="plain" id="XcO-uA-Fkh">
                                 <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="485-ra-7JF">
                                     <rect key="frame" x="20" y="7" width="82" height="30"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <state key="normal" title="Disconnect"/>
+                                    <state key="normal" title="Disconnect">
+                                        <color key="titleColor" red="0.93333333330000001" green="0.96078431369999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
                                     <connections>
                                         <action selector="disconnectBeanButton:" destination="-1" eventType="touchUpInside" id="wZe-Jf-glp"/>
                                     </connections>
@@ -83,7 +89,7 @@
                     </connections>
                 </button>
             </subviews>
-            <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" red="0.93333333333333335" green="0.96078431372549022" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="po5-ub-8sr" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="0JN-cA-RKT"/>
                 <constraint firstItem="jrE-ZJ-m0C" firstAttribute="centerX" secondItem="ceV-Y8-GIi" secondAttribute="centerX" id="50N-pe-8Uz"/>
