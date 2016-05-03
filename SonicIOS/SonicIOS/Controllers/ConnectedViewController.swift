@@ -17,7 +17,6 @@ class ConnectedViewController: UIViewController, PTDBeanDelegate {
     var time : [String] = []
     var uvIndices : [Double] = []
 
-    //@IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var sonicView: SonicView!
     
    
@@ -80,8 +79,6 @@ class ConnectedViewController: UIViewController, PTDBeanDelegate {
         sonicView.lineChartView.leftAxis.valueFormatter = NSNumberFormatter()
         sonicView.lineChartView.leftAxis.valueFormatter?.minimumFractionDigits = 0
         
-        //sonicView.lineChartView.layer.cornerRadius = 8.0
-        
         sonicView.lineChartView.data = lineChartData
         
     }
@@ -138,8 +135,6 @@ class ConnectedViewController: UIViewController, PTDBeanDelegate {
             sonicView.resetBtnImage.backgroundColor = UIColor(colorLiteralRed: 1.0, green: 0.0, blue: 0.0, alpha: 1.0)
 
             AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
-            AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
-            
             
             sonicView.putOnSunscreenLabel.hidden = false;
             
