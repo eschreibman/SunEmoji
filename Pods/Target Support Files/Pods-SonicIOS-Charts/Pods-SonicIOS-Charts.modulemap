@@ -1,6 +1,0 @@
-framework module Charts {
-  umbrella header "Pods-SonicIOS-Charts-umbrella.h"
-
-  export *
-  module * { export * }
-}

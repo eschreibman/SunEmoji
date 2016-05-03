@@ -18,6 +18,7 @@
 		02C48A571A141B4D0015956F /* Cool_BeansTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C48A561A141B4D0015956F /* Cool_BeansTests.swift */; };
 		02F74AE01A16F52B00E4DBB7 /* DisconnectedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F74ADF1A16F52B00E4DBB7 /* DisconnectedViewController.swift */; };
 		02F74AE21A16F54600E4DBB7 /* ConnectedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F74AE11A16F54600E4DBB7 /* ConnectedViewController.swift */; };
+		A588C3791CD92B6200BF5DF2 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A588C3781CD92B6200BF5DF2 /* Charts.framework */; };
 		A5CC305F1CD11500008C394C /* sunemoji2.png in Resources */ = {isa = PBXBuildFile; fileRef = A5CC305E1CD11500008C394C /* sunemoji2.png */; };
 		A5CC30611CD11507008C394C /* plain sunscreen2.png in Resources */ = {isa = PBXBuildFile; fileRef = A5CC30601CD11507008C394C /* plain sunscreen2.png */; };
 		BA07CFAAEA40CEEA54649198 /* Pods_SonicIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA380C2C6BE4343A1A625583 /* Pods_SonicIOS.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -40,7 +41,7 @@
 		02C27BEF1A14927F00685D31 /* CustomColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomColors.swift; sourceTree = "<group>"; };
 		02C27BF61A15B97100685D31 /* SonicView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SonicView.xib; sourceTree = "<group>"; };
 		02C27BF81A15C4DE00685D31 /* SonicView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SonicView.swift; sourceTree = "<group>"; };
-		02C48A3B1A141B4D0015956F /* SunDial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SunDial.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		02C48A3B1A141B4D0015956F /* SunEmoji.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SunEmoji.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02C48A3F1A141B4D0015956F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		02C48A401A141B4D0015956F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		02C48A451A141B4D0015956F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -55,6 +56,7 @@
 		479240FFDBF77C40AE02328C /* Pods-Cool Beans.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cool Beans.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cool Beans/Pods-Cool Beans.debug.xcconfig"; sourceTree = "<group>"; };
 		636A854F63B87CE37D41410E /* Pods-SonicIOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SonicIOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-SonicIOS/Pods-SonicIOS.release.xcconfig"; sourceTree = "<group>"; };
 		754D10CDF1751A9F9197CCD4 /* Pods-Cool Beans.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cool Beans.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cool Beans/Pods-Cool Beans.release.xcconfig"; sourceTree = "<group>"; };
+		A588C3781CD92B6200BF5DF2 /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = "../../../../../../Library/Developer/Xcode/DerivedData/SonicIOS-guleelnfvaroxwhgvrjadwwhtrga/Build/Products/Debug-iphoneos/Charts.framework"; sourceTree = "<group>"; };
 		A5CC305E1CD11500008C394C /* sunemoji2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sunemoji2.png; path = ../../../../../../../../Downloads/sunemoji2.png; sourceTree = "<group>"; };
 		A5CC30601CD11507008C394C /* plain sunscreen2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "plain sunscreen2.png"; path = "../../../../../../../../Downloads/plain sunscreen2.png"; sourceTree = "<group>"; };
 		CA380C2C6BE4343A1A625583 /* Pods_SonicIOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SonicIOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A588C3791CD92B6200BF5DF2 /* Charts.framework in Frameworks */,
 				F6F766170DC03089EE95A3D6 /* libPods-Cool Beans.a in Frameworks */,
 				BA07CFAAEA40CEEA54649198 /* Pods_SonicIOS.framework in Frameworks */,
 			);
@@ -114,7 +117,7 @@
 		02C48A3C1A141B4D0015956F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				02C48A3B1A141B4D0015956F /* SunDial.app */,
+				02C48A3B1A141B4D0015956F /* SunEmoji.app */,
 				02C48A501A141B4D0015956F /* SonicIOS.xctest */,
 			);
 			name = Products;
@@ -174,6 +177,7 @@
 		7EF3025742B8DB76E430330F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A588C3781CD92B6200BF5DF2 /* Charts.framework */,
 				17A1BBC4224A0E92FD7BE754 /* libPods-Cool Beans.a */,
 				CA380C2C6BE4343A1A625583 /* Pods_SonicIOS.framework */,
 			);
@@ -211,7 +215,7 @@
 			);
 			name = SonicIOS;
 			productName = "Cool Beans";
-			productReference = 02C48A3B1A141B4D0015956F /* SunDial.app */;
+			productReference = 02C48A3B1A141B4D0015956F /* SunEmoji.app */;
 			productType = "com.apple.product-type.application";
 		};
 		02C48A4F1A141B4D0015956F /* SonicIOSTests */ = {
@@ -486,7 +490,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cocoadrillosoftware.sonicbean;
-				PRODUCT_NAME = SunDial;
+				PRODUCT_NAME = SunEmoji;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/SonicIOS/Bridging-Header.h";
 			};
@@ -503,7 +507,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cocoadrillosoftware.sonicbean;
-				PRODUCT_NAME = SunDial;
+				PRODUCT_NAME = SunEmoji;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/SonicIOS/Bridging-Header.h";
 			};
