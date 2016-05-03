@@ -40,7 +40,7 @@
 		02C27BEF1A14927F00685D31 /* CustomColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomColors.swift; sourceTree = "<group>"; };
 		02C27BF61A15B97100685D31 /* SonicView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SonicView.xib; sourceTree = "<group>"; };
 		02C27BF81A15C4DE00685D31 /* SonicView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SonicView.swift; sourceTree = "<group>"; };
-		02C48A3B1A141B4D0015956F /* SunEmoji.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SunEmoji.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		02C48A3B1A141B4D0015956F /* SunDial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SunDial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02C48A3F1A141B4D0015956F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		02C48A401A141B4D0015956F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		02C48A451A141B4D0015956F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -114,7 +114,7 @@
 		02C48A3C1A141B4D0015956F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				02C48A3B1A141B4D0015956F /* SunEmoji.app */,
+				02C48A3B1A141B4D0015956F /* SunDial.app */,
 				02C48A501A141B4D0015956F /* SonicIOS.xctest */,
 			);
 			name = Products;
@@ -211,7 +211,7 @@
 			);
 			name = SonicIOS;
 			productName = "Cool Beans";
-			productReference = 02C48A3B1A141B4D0015956F /* SunEmoji.app */;
+			productReference = 02C48A3B1A141B4D0015956F /* SunDial.app */;
 			productType = "com.apple.product-type.application";
 		};
 		02C48A4F1A141B4D0015956F /* SonicIOSTests */ = {
@@ -486,7 +486,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cocoadrillosoftware.sonicbean;
-				PRODUCT_NAME = SunEmoji;
+				PRODUCT_NAME = SunDial;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/SonicIOS/Bridging-Header.h";
 			};
@@ -503,7 +503,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.cocoadrillosoftware.sonicbean;
-				PRODUCT_NAME = SunEmoji;
+				PRODUCT_NAME = SunDial;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/SonicIOS/Bridging-Header.h";
 			};
