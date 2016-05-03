@@ -1,3 +1,0 @@
-
-# Sun Emoji
-
