@@ -18,6 +18,8 @@
 		02C48A571A141B4D0015956F /* Cool_BeansTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02C48A561A141B4D0015956F /* Cool_BeansTests.swift */; };
 		02F74AE01A16F52B00E4DBB7 /* DisconnectedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F74ADF1A16F52B00E4DBB7 /* DisconnectedViewController.swift */; };
 		02F74AE21A16F54600E4DBB7 /* ConnectedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F74AE11A16F54600E4DBB7 /* ConnectedViewController.swift */; };
+		A5CC305F1CD11500008C394C /* sunemoji2.png in Resources */ = {isa = PBXBuildFile; fileRef = A5CC305E1CD11500008C394C /* sunemoji2.png */; };
+		A5CC30611CD11507008C394C /* plain sunscreen2.png in Resources */ = {isa = PBXBuildFile; fileRef = A5CC30601CD11507008C394C /* plain sunscreen2.png */; };
 		BA07CFAAEA40CEEA54649198 /* Pods_SonicIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA380C2C6BE4343A1A625583 /* Pods_SonicIOS.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		F6F766170DC03089EE95A3D6 /* libPods-Cool Beans.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 17A1BBC4224A0E92FD7BE754 /* libPods-Cool Beans.a */; };
 /* End PBXBuildFile section */
@@ -53,6 +55,8 @@
 		479240FFDBF77C40AE02328C /* Pods-Cool Beans.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cool Beans.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cool Beans/Pods-Cool Beans.debug.xcconfig"; sourceTree = "<group>"; };
 		636A854F63B87CE37D41410E /* Pods-SonicIOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SonicIOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-SonicIOS/Pods-SonicIOS.release.xcconfig"; sourceTree = "<group>"; };
 		754D10CDF1751A9F9197CCD4 /* Pods-Cool Beans.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cool Beans.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cool Beans/Pods-Cool Beans.release.xcconfig"; sourceTree = "<group>"; };
+		A5CC305E1CD11500008C394C /* sunemoji2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sunemoji2.png; path = ../../../../../../../../Downloads/sunemoji2.png; sourceTree = "<group>"; };
+		A5CC30601CD11507008C394C /* plain sunscreen2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "plain sunscreen2.png"; path = "../../../../../../../../Downloads/plain sunscreen2.png"; sourceTree = "<group>"; };
 		CA380C2C6BE4343A1A625583 /* Pods_SonicIOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SonicIOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3F50B5E771EEE5317B98394 /* Pods-SonicIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SonicIOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SonicIOS/Pods-SonicIOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -88,6 +92,8 @@
 		02C27BF51A15B97100685D31 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A5CC305E1CD11500008C394C /* sunemoji2.png */,
+				A5CC30601CD11507008C394C /* plain sunscreen2.png */,
 				02C27BF61A15B97100685D31 /* SonicView.xib */,
 				02C27BF81A15C4DE00685D31 /* SonicView.swift */,
 			);
@@ -271,6 +277,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5CC305F1CD11500008C394C /* sunemoji2.png in Resources */,
+				A5CC30611CD11507008C394C /* plain sunscreen2.png in Resources */,
 				02C48A461A141B4D0015956F /* Main.storyboard in Resources */,
 				02C27BF71A15B97100685D31 /* SonicView.xib in Resources */,
 				02C48A4B1A141B4D0015956F /* LaunchScreen.xib in Resources */,

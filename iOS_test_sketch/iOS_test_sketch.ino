@@ -33,10 +33,19 @@ void loop() {
         
         Serial.println(reading + index);     
 
-        if(UVreading % 10 == 0){
+        if((int)UVindex % 4 == 0){
+          Serial.println("reset_confirm");
+        }
+
+
+        if((int)UVindex % 10 == 0){
           UVreading = 0;
           UVindex = 0;
+          Serial.println("timer_at_zero");
         }
+        
+
+        
         
         delay(2000);
 }

@@ -46,7 +46,7 @@
                                 <rect key="frame" x="401" y="12" width="37" height="37"/>
                             </activityIndicatorView>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.76470588240000004" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Sli-IR-3x0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="9Ax-Mg-lB6"/>
                             <constraint firstItem="KQc-d4-Zg6" firstAttribute="centerX" secondItem="Sli-IR-3x0" secondAttribute="centerX" id="CwQ-qZ-yTu"/>
@@ -122,7 +122,6 @@
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
-                        <outlet property="scrollView" destination="d0k-UW-wt0" id="LhM-xp-UMs"/>
                         <outlet property="sonicView" destination="DSY-Wp-G3O" id="Uwr-Ve-CyQ"/>
                     </connections>
                 </viewController>

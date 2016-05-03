@@ -5,6 +5,7 @@
 //  Created by Kyle on 11/14/14.
 //  Copyright (c) 2014 Kyle Weiner. All rights reserved.
 //
+//////////////***************************////////////////////////////////////////
 
 import UIKit
 import Charts
@@ -16,6 +17,8 @@ class SonicView: UIView {
     @IBOutlet weak var uvIndex: UILabel!
     @IBOutlet weak var lineChartView: LineChartView!
     @IBOutlet weak var resetButton: UIButton!
+    @IBOutlet weak var resetBtnImage: UIImageView!
+    @IBOutlet weak var putOnSunscreenLabel: UILabel!
     
     var myController : ConnectedViewController!
     
@@ -28,7 +31,12 @@ class SonicView: UIView {
             }
         }
         
-        resetButton.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 1.0, blue: 0.0, alpha: 1.0)
+        
+        
+        resetButton.setTitleColor( UIColor.grayColor(), forState: UIControlState.Normal)
+        resetBtnImage.backgroundColor = UIColor.grayColor()
+        
+        resetButton.enabled  = false;
         
     }
     
@@ -48,6 +56,5 @@ class SonicView: UIView {
         let bundle = NSBundle(forClass: self.dynamicType)
         self.addSubview(bundle.loadNibNamed("SonicView", owner: self, options: nil)[0] as! UIView)
     }
-    
 
 }

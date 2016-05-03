@@ -8,6 +8,7 @@
 
 import UIKit
 import Charts
+import AudioToolbox
 
 class ConnectedViewController: UIViewController, PTDBeanDelegate {
 
@@ -16,7 +17,7 @@ class ConnectedViewController: UIViewController, PTDBeanDelegate {
     var time : [String] = []
     var uvIndices : [Double] = []
 
-    @IBOutlet weak var scrollView: UIScrollView!
+    //@IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var sonicView: SonicView!
     
    
@@ -31,15 +32,29 @@ class ConnectedViewController: UIViewController, PTDBeanDelegate {
         
         sonicView.myController = self;
         
+        sonicView.resetBtnImage.layer.cornerRadius = 10.0;
+        sonicView.resetBtnImage.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 1.0, blue: 0.0, alpha: 1.0)
+        
+        sonicView.putOnSunscreenLabel.hidden = true;
+        
     }
 
     
     func setChart(dataPoints: [String], values: [Double]) {
         
         var dataEntries: [ChartDataEntry] = []
+        var value = 0.0;
         
         for i in 0..<dataPoints.count {
-            let dataEntry = ChartDataEntry(value: values[i], xIndex: i)
+            
+            if(values[i] > 12){
+                value = 12
+            }
+            else {
+                value = values[i]
+            }
+            
+            let dataEntry = ChartDataEntry(value: value, xIndex: i)
             dataEntries.append(dataEntry)
         }
         
@@ -55,14 +70,18 @@ class ConnectedViewController: UIViewController, PTDBeanDelegate {
         
         sonicView.lineChartView.xAxis.axisMinValue = 0;
         
-        sonicView.lineChartView.descriptionText = "";
-        sonicView.lineChartView.legend.enabled = false;
-
+        sonicView.lineChartView.descriptionText = ""
+        //sonicView.lineChartView.legend.enabled = false
+        sonicView.lineChartView.xAxis.labelPosition = .BottomInside
         
-        sonicView.lineChartView.leftAxis.valueFormatter = NSNumberFormatter();
-        sonicView.lineChartView.leftAxis.valueFormatter?.minimumFractionDigits = 0;
         
 
+        
+        sonicView.lineChartView.leftAxis.valueFormatter = NSNumberFormatter()
+        sonicView.lineChartView.leftAxis.valueFormatter?.minimumFractionDigits = 0
+        
+        //sonicView.lineChartView.layer.cornerRadius = 8.0
+        
         sonicView.lineChartView.data = lineChartData
         
     }
@@ -109,14 +128,46 @@ class ConnectedViewController: UIViewController, PTDBeanDelegate {
             
             let notification = UILocalNotification()
             notification.alertBody = "Put on sunscreen!" // text that will be displayed in the notification
-            notification.alertAction = "open" // text that is displayed after "slide to..." on the lock screen - defaults to "slide to view" → I don’t think we’re actually using this
+            notification.alertAction = "Open"
             notification.fireDate = NSDate() // date when notification should be fired (NSDate() defaults to current date and time)
             notification.soundName = UILocalNotificationDefaultSoundName // play default sound (don’t think this’ll work unless we add “.Sound” to the AppDelegate)
             notification.category = "TODO_CATEGORY" // i don’t think we’re using this
             UIApplication.sharedApplication().scheduleLocalNotification(notification) // schedules the notification
             
+            sonicView.resetButton.setTitleColor(UIColor(colorLiteralRed: 1.0, green: 0.0, blue: 0.0, alpha: 1.0), forState:UIControlState.Normal)
+            sonicView.resetBtnImage.backgroundColor = UIColor(colorLiteralRed: 1.0, green: 0.0, blue: 0.0, alpha: 1.0)
+
+            AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
+            AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
+            
+            
+            sonicView.putOnSunscreenLabel.hidden = false;
+            
         }
         
+        
+        if(theString.containsString("pbutton_pressed")){
+            
+            sonicView.resetButton.setTitleColor(UIColor(colorLiteralRed: 0.0, green: 1.0, blue: 0.0, alpha: 1.0), forState:UIControlState.Normal)
+            sonicView.resetBtnImage.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 1.0, blue: 0.0, alpha: 1.0)
+            
+            sonicView.putOnSunscreenLabel.hidden = true;
+            
+        }
+        
+        
+        if(theString.containsString("reset_confirm")){
+        
+            sonicView.resetButton.setTitleColor(UIColor(colorLiteralRed: 0.0, green: 1.0, blue: 0.0, alpha: 1.0), forState:UIControlState.Normal)
+
+            sonicView.resetBtnImage.backgroundColor = UIColor(colorLiteralRed: 0.0, green: 1.0, blue: 0.0, alpha: 1.0)
+            
+            sonicView.resetButton.enabled  = true;
+            
+            sonicView.putOnSunscreenLabel.hidden = true;
+
+        
+        }
         
         
         print(theString)
@@ -129,11 +180,26 @@ class ConnectedViewController: UIViewController, PTDBeanDelegate {
         let hour = calendar.component(.Hour, fromDate: date)
         let minutes = calendar.component(.Minute, fromDate: date)
         
-        let string = String(hour) + ":" + String(minutes)
+        var minuteString = String(minutes)
+        var hourString = String(hour)
         
-        return string;
+        if(minutes < 10){
+            minuteString = "0" + String(minutes)
+        }
+        if(hour > 12){
+            hourString = String(hour - 12)
+        }
         
         
+        let string = hourString + ":" + minuteString
+        
+        return string
+        
+        
+    }
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return .LightContent
     }
 
 
