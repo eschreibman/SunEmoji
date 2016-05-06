@@ -1,44 +1,114 @@
 /*
-
-  GraphicsTest.pde
-
-  >>> Before compiling: Please remove comment from the constructor of the
-  >>> connected graphics display (see below).
-
-  Universal 8bit Graphics Library, https://github.com/olikraus/u8glib/
-
-  Copyright (c) 2012, olikraus@gmail.com
-  All rights reserved.
-
-  Redistribution and use in source and binary forms, with or without modification,
-  are permitted provided that the following conditions are met:
-
-    Redistributions of source code must retain the above copyright notice, this list
-    of conditions and the following disclaimer.
-
-    Redistributions in binary form must reproduce the above copyright notice, this
-    list of conditions and the following disclaimer in the documentation and/or other
-    materials provided with the distribution.
-
-  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND
-  CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
-  INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
-  MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-  DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR
-  CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
-  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
-  NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
-  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
-  CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
-  STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
-  ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
-  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ * Tufts Comp 50 Wearable Devices Final Project
+ * Code contributions from: Eliza Schreibman, Jake Mingolla, Reema Al-Marzoog, 
+ * Melissa Blotner, Chris Gregg, and other libraries credited below.
+ * 
+ * SunDial- A wearables device designed to help users moniter their sun intake
+ * and build better skin care habits. A timer (displayed on an oLED screen) fills up
+ * over time as the user is exposed to more UV light. If there is a higher amount of UV
+ * exposure detected, the timer fills up faster. Timer is reset via button or IOS app.
+ * 
+ * Major thanks to Chris, Kate, and Raewyn for all their help!
+ * 
+ */
 
 
-*/
+/**************************  BUZZER CONSTANTS  ************************/
+#define NOTE_B0  31
+#define NOTE_C1  33
+#define NOTE_CS1 35
+#define NOTE_D1  37
+#define NOTE_DS1 39
+#define NOTE_E1  41
+#define NOTE_F1  44
+#define NOTE_FS1 46
+#define NOTE_G1  49
+#define NOTE_GS1 52
+#define NOTE_A1  55
+#define NOTE_AS1 58
+#define NOTE_B1  62
+#define NOTE_C2  65
+#define NOTE_CS2 69
+#define NOTE_D2  73
+#define NOTE_DS2 78
+#define NOTE_E2  82
+#define NOTE_F2  87
+#define NOTE_FS2 93
+#define NOTE_G2  98
+#define NOTE_GS2 104
+#define NOTE_A2  110
+#define NOTE_AS2 117
+#define NOTE_B2  123
+#define NOTE_C3  131
+#define NOTE_CS3 139
+#define NOTE_D3  147
+#define NOTE_DS3 156
+#define NOTE_E3  165
+#define NOTE_F3  175
+#define NOTE_FS3 185
+#define NOTE_G3  196
+#define NOTE_GS3 208
+#define NOTE_A3  220
+#define NOTE_AS3 233
+#define NOTE_B3  247
+#define NOTE_C4  262
+#define NOTE_CS4 277
+#define NOTE_D4  294
+#define NOTE_DS4 311
+#define NOTE_E4  330
+#define NOTE_F4  349
+#define NOTE_FS4 370
+#define NOTE_G4  392
+#define NOTE_GS4 415
+#define NOTE_A4  440
+#define NOTE_AS4 466
+#define NOTE_B4  494
+#define NOTE_C5  523
+#define NOTE_CS5 554
+#define NOTE_D5  587
+#define NOTE_DS5 622
+#define NOTE_E5  659
+#define NOTE_F5  698
+#define NOTE_FS5 740
+#define NOTE_G5  784
+#define NOTE_GS5 831
+#define NOTE_A5  880
+#define NOTE_AS5 932
+#define NOTE_B5  988
+#define NOTE_C6  1047
+#define NOTE_CS6 1109
+#define NOTE_D6  1175
+#define NOTE_DS6 1245
+#define NOTE_E6  1319
+#define NOTE_F6  1397
+#define NOTE_FS6 1480
+#define NOTE_G6  1568
+#define NOTE_GS6 1661
+#define NOTE_A6  1760
+#define NOTE_AS6 1865
+#define NOTE_B6  1976
+#define NOTE_C7  2093
+#define NOTE_CS7 2217
+#define NOTE_D7  2349
+#define NOTE_DS7 2489
+#define NOTE_E7  2637
+#define NOTE_F7  2794
+#define NOTE_FS7 2960
+#define NOTE_G7  3136
+#define NOTE_GS7 3322
+#define NOTE_A7  3520
+#define NOTE_AS7 3729
+#define NOTE_B7  3951
+#define NOTE_C8  4186
+#define NOTE_CS8 4435
+#define NOTE_D8  4699
+#define NOTE_DS8 4978
+
+/*****************************  SCREEN CONSTANTS *************************************/
 
 
 #include "U8glib.h"
+
 #include <PinChangeInt.h>
 
 U8GLIB_SSD1306_128X32 u8g(U8G_I2C_OPT_NONE);  // I2C / TWI
@@ -71,11 +141,12 @@ const uint8_t sun[] U8G_PROGMEM = {
 
 };
 
-/********************************************************************************************/
+/*************************************  MAIN CODE  ************************************************/
 
 #define SIGNAL A0
 #define S0 0
 #define BUTTON 1
+#define SPEAKER 2
 
 long timer_start;
 long prev_time = 0;
@@ -83,17 +154,21 @@ bool reset = false;
 long curr_time;
 int count = 0;
 int UVindex;
-int max_count = 100; //for actual, 1000
+//determines how often the UV is read and sent to the IOS
+int max_count = 25; //for actual, 1000
+
 
 void setup(void) {
         Serial.begin(9600);
-        //reading off of MUX
+        //reading the output signal off of the MUX
         pinMode(SIGNAL, INPUT);
-        //pin which switches to change between channels
+        //pin that switches between channels (UV reading and screen writing)
         pinMode(S0, OUTPUT);
         //input button
         pinMode(BUTTON, INPUT_PULLUP);
         attachPinChangeInterrupt(BUTTON, resetTimer, FALLING);
+        //buzzer
+        pinMode(SPEAKER, OUTPUT);
 
         //initialize timer
         timer_start = millis();
@@ -134,7 +209,9 @@ void loop(void) {
                 while(!reset){ 
                         //alert the user by changing the screen and app
                         drawAlert();
-                        
+                        //play a melody to alter user through auidory queue
+                        playMelody();
+                            
                         //wait for either button press on device or IOS reset
                         if (Serial.available() > 0) {
                                 String data = Serial.readString();
@@ -147,12 +224,18 @@ void loop(void) {
                 }
                 
                 //sucessfully reset
+                //turn off speaker
+                digitalWrite(SPEAKER, LOW);
                 reset = false;
                 //reset start time and count
                 timer_start = millis();
                 count = 0;
-        }
+        } 
+
+
 }
+
+/******************************  UV TIMER  *********************************/
 
 /* Reads off the UV sensor every few seconds
  *  Sends that reading to the IOS app for graphing
@@ -176,20 +259,22 @@ void readUV() {
         }
 }
 
+
 /* Calculates the rate at which the timer should fill up
  * based on the current UV reading. The current times are small
  * to make testing easier, but we have commented the actual times
  * based on data found on the internet (e.g. when the UV index is
- * below 2 you need to reapply sunscreen every 2 hours) 
+ * below 2 you need to reapply sunscreen every 2 hours).
+ * Returns true when the timer/screen has filled up all the way, false otherwise
 */
 bool Timer(int UV, long start, long curr){
         long timeLimit = 0;
         if( UV < 2){
                 //2 minutes
-                timeLimit = 12000; //real life time: 120 minutes
+                timeLimit = 40000; //real life time: 120 minutes
         } else if (UV < 4){
                 //1 minute
-                timeLimit = 60000; //3600000 //real life time: 60 minutes
+                timeLimit = 35000; //3600000 //real life time: 60 minutes
         } else if (UV < 6){
                 //30 seconds
                 timeLimit = 30000;//1800000; //real life time: 30 minutes
@@ -211,12 +296,24 @@ bool Timer(int UV, long start, long curr){
                 //take the current percentage of time to fill up the bar on screen
                 float bar = ((float)(curr-start)/(float)timeLimit);
                 drawStep(bar);
-                //reset = false;
+                reset = false;
                 return false;
         }
 }
 
+/* Interupt function that resets the timer logic
+ * if the user pushes the physical (not IOS) button
+ */
+void resetTimer() {
+        //reset the timer
+        timer_start = millis();
+        //stops the draw alert
+        reset = true;
+        //tell IOS button on device was pressed
+        Serial.println("pbutton_pressed");
+}
 
+/******************************  SCREEN  *********************************/
 
 /* Draws a step of the bar given a current step value.
  * This value must be between MIN and MAX - if it is not,
@@ -292,15 +389,75 @@ void drawAlert() {
         } while (u8g.nextPage() );
 }
 
-/* Interupt function that resets the timer logic
- * if the user pushes the physical (not IOS) button
+
+/***************************  BUZZER  ************************************/
+/*
+ * Melody
+ * created 21 Jan 2010, modified 30 Aug 2011
+ * by Tom Igoe
+ * This example code is in the public domain. http://www.arduino.cc/en/Tutorial/Tone
  */
-void resetTimer() {
-        //reset the timer
-        timer_start = millis();
-        reset = true;
-        //tell IOS button on device was pressed
-        Serial.println("pbutton_pressed");
+
+// notes in the melody:
+int melody[] = {
+        NOTE_C4, NOTE_G3, NOTE_G3, NOTE_A3, NOTE_G3, 0, NOTE_B3, NOTE_C4
+};
+
+// note durations: 4 = quarter note, 8 = eighth note, etc.:
+int noteDurations[] = {
+        4, 8, 8, 4, 4, 4, 4, 4
+};
+
+void playMelody() {
+        // iterate over the notes of the melody:
+        for (int thisNote = 0; thisNote < 8; thisNote++) {
+                // to calculate the note duration, take one second
+                // divided by the note type.
+                //e.g. quarter note = 1000 / 4, eighth note = 1000/8, etc.
+                int noteDuration = 1000 / noteDurations[thisNote];
+                tone(SPEAKER, melody[thisNote], noteDuration);
+                
+                // to distinguish the notes, set a minimum time between them.
+                // the note's duration + 30% seems to work well:
+                int pauseBetweenNotes = noteDuration * 1.30;
+                delay(pauseBetweenNotes);
+                // stop the tone playing:
+                noTone(8);
+        }
 }
 
-
+/*
+ * GraphicsTest.pde
+ *
+ * >>> Before compiling: Please remove comment from the constructor of the
+ * >>> connected graphics display (see below).
+ *
+ * Universal 8bit Graphics Library, https://github.com/olikraus/u8glib/
+ *
+ * Copyright (c) 2012, olikraus@gmail.com
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without modification,
+ * are permitted provided that the following conditions are met:
+ *
+ * Redistributions of source code must retain the above copyright notice, this list
+ *  of conditions and the following disclaimer.
+ *
+ * Redistributions in binary form must reproduce the above copyright notice, this
+ * list of conditions and the following disclaimer in the documentation and/or other
+ * materials provided with the distribution.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND
+ * CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+ * INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+ * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR
+ * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
+ * NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+ * CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
+ * STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+ * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
+ * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ */
